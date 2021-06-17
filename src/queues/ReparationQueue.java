@@ -1,5 +1,5 @@
 
-package proyecto.pkg2.so.vergel.vivas;
+package queues;
 
 public class ReparationQueue {
     

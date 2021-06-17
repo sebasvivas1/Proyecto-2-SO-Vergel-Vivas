@@ -1,4 +1,4 @@
-package proyecto.pkg2.so.vergel.vivas;
+package queues;
 
 public class Pana {
     String id;

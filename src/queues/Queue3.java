@@ -1,11 +1,11 @@
-package proyecto.pkg2.so.vergel.vivas;
+package queues;
 
-public class Queue1 {
+public class Queue3 {
     Pana beginning;
     Pana end;
     int size;
     
-    public Queue1() {
+    public Queue3() {
         beginning=end=null;
         size = 0;
     }
@@ -39,5 +39,5 @@ public class Queue1 {
     public int queueSize(){
         return size;
     }
+    
 }
-
