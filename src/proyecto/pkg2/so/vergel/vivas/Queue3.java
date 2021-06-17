@@ -14,7 +14,7 @@ public class Queue3 {
         return beginning == null;
     }
     
-    public void insert(int id, int prior) {
+    public void insert(String id, String prior) {
         Pana newPana = new Pana(id, prior);
         if(isEmpty()) {
             beginning = newPana;
@@ -25,15 +25,15 @@ public class Queue3 {
         size++;
     }
     
-    public int delete() {
-        int aux = beginning.int;
+    public String delete() {
+        String aux = beginning.id;
         beginning = beginning.next;
         size--;
         return aux;
     }
     
-    public int firstPana(){
-        return beginning.dato;
+    public String firstPana(){
+        return beginning.id;
     }
     
     public int queueSize(){
