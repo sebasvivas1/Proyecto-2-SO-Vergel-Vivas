@@ -1,7 +1,8 @@
 package proyecto.pkg2.so.vergel.vivas;
 
 public class Queue3 {
-    Node beginning, end;
+    Pana beginning;
+    Pana end;
     int size;
     
     public Queue3() {
@@ -13,19 +14,19 @@ public class Queue3 {
         return beginning == null;
     }
     
-    public void insert(int pana) {
-        Node newNode = new Node(pana);
+    public void insert(int id, int prior) {
+        Pana newPana = new Pana(id, prior);
         if(isEmpty()) {
-            beginning = newNode;
+            beginning = newPana;
         } else {
-            end.next = newNode;
+            end.next = newPana;
         }
-        end = newNode;
+        end = newPana;
         size++;
     }
     
     public int delete() {
-        int aux = beginning.dato;
+        int aux = beginning.int;
         beginning = beginning.next;
         size--;
         return aux;
