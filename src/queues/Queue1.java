@@ -1,42 +1,48 @@
 package queues;
 
 public class Queue1 {
-    Pana beginning;
-    Pana end;
-    int size;
+    private Pana pFirst;
+    private Pana pLast;
+    private int size;
     
     public Queue1() {
-        beginning=end=null;
-        size = 0;
+        this.pFirst = this.pLast = null;
+        this.size = 0;
     }
     
     public boolean isEmpty() {
-        return beginning == null;
+        return this.pFirst == null;
     }
     
-    public void insert(String id, String prior) {
+    public void encolar(String id, String prior) {
         Pana newPana = new Pana(id, prior);
         if(isEmpty()) {
-            beginning = newPana;
+            this.pFirst = newPana;
         } else {
-            end.next = newPana;
+            this.pLast.setpNext(newPana);
         }
-        end = newPana;
+        this.pLast = newPana;
         size++;
     }
     
-    public String delete() {
-        String aux = beginning.id;
-        beginning = beginning.next;
+    public void desencolar() {
+        Pana pAux = this.pFirst;
+        this.pFirst.setpNext(this.pFirst.getpNext());
         size--;
-        return aux;
     }
     
-    public String firstPana(){
-        return beginning.id;
+    public void showDato(){
+        Pana pAux = this.pFirst;
+        while(pAux.getpNext() != null){
+                   
+        }
     }
     
-    public int queueSize(){
+    public Pana firstPana(){
+        return this.pFirst;
+    }
+    
+    public int queue1Size(){
         return size;
     }
 }
