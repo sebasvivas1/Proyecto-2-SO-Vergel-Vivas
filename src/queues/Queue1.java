@@ -27,14 +27,17 @@ public class Queue1 {
     
     public void desencolar() {
         Pana pAux = this.pFirst;
-        this.pFirst.setpNext(this.pFirst.getpNext());
+        this.pFirst = this.pFirst.getpNext();
+        //Enviar a pAux a otra cola instanciado la otra cola en esta clase
         size--;
     }
-    
+ 
     public void showDato(){
         Pana pAux = this.pFirst;
-        while(pAux.getpNext() != null){
-                   
+        while(pAux != null){
+            System.out.println(pAux.getDato()); 
+            pAux = pAux.getpNext();
+        
         }
     }
     
