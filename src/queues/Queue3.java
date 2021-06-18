@@ -14,7 +14,7 @@ public class Queue3 {
         return this.pFirst == null;
     }
     
-    public void encolar(String id, String prior) {
+    public void encolar(int id, String prior) {
         Pana newPana = new Pana(id, prior);
         if(isEmpty()) {
             this.pFirst = newPana;

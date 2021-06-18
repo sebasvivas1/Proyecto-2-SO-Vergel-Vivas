@@ -1,12 +1,12 @@
 package queues;
 
 public class Pana {
-    private String id;
+    private int id;
     private String prior;
     private String dato;
     private Pana pNext;
     
-    public Pana(String id, String priority) {
+    public Pana(int id, String priority) {
         
         this.id = id;
         this.prior = priority;
@@ -15,11 +15,11 @@ public class Pana {
         this.dato = id+priority;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
