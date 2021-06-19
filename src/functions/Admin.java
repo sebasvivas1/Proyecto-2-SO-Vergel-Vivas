@@ -44,20 +44,20 @@ public class Admin {
 
     public void checkQueues(Queue1 queue1, Queue2 queue2, Queue3 queue3) {
 
-        if (!queue3.isEmpty()) {
-            System.out.println("El robot va a revisar un Pana de la lista de prioridad 3.");
+        if (!queue1.isEmpty()) {
+            System.out.println("El robot va a revisar un Pana de la lista de prioridad 1.");
 
         } else {
 
             if (!queue2.isEmpty()) {
 
-                System.out.println("El robot va a revisar un Pana de la lista de prioridad 2 porque la lista de prioridad 3 está vacia.");
+                System.out.println("El robot va a revisar un Pana de la lista de prioridad 2 porque la lista de prioridad 1 está vacia.");
 
             } else if (queue2.isEmpty()) {
 
-                if (!queue1.isEmpty()) {
+                if (!queue3.isEmpty()) {
 
-                    System.out.println("El robot va a revisar un Pana de la lista de prioridad 1 porque la lista de prioridad 2 y 3 están vacías.");
+                    System.out.println("El robot va a revisar un Pana de la lista de prioridad 3 porque la lista de prioridad 1 y 2 están vacías.");
 
                 } else {
                     this.checkIfAllEmpty(queue1, queue2, queue3);
