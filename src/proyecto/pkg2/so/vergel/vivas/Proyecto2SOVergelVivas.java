@@ -35,11 +35,13 @@ public class Proyecto2SOVergelVivas {
         System.out.println("Ahora cola 1 tiene: ");
         
         Pana pAux = cola.desencolar();
+        Pana pAux1 = cola.desencolar();
         cola.showDato();
         
         System.out.println("");
         System.out.println("La cola de reparaciones tiene: ");
         rep.enconlar(pAux);
+        rep.enconlar(pAux1);
         rep.showDato();
         
     

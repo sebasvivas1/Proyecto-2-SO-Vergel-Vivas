@@ -25,11 +25,12 @@ public class Queue2 {
         size++;
     }
     
-    public void desencolar() {
+    public Pana desencolar() {
         Pana pAux = this.pFirst;
         this.pFirst = this.pFirst.getpNext();
-        //Enviar a pAux a otra cola instanciado la otra cola en esta clase
         size--;
+        pAux.setpNext(null);
+        return pAux;
     }
     
     public void showDato(){
