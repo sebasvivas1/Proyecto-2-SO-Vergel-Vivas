@@ -25,6 +25,16 @@ public class Queue2 {
         size++;
     }
     
+    public void enconlarDesdeOtraCola(Pana rPana) { //RECIBE AL PANA PARA ENCOLARLO CUANDO VIENE DE OTRA COLA
+        if (isEmpty()) {
+            this.pFirst = rPana;
+        } else {
+            this.pLast.setpNext(rPana);
+        }
+        this.pLast = rPana;
+        size++;
+    }
+    
     public Pana desencolar() {
         Pana pAux = this.pFirst;
         this.pFirst = this.pFirst.getpNext();

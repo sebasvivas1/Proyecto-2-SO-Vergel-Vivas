@@ -15,7 +15,7 @@ public class Queue1 {
         return this.pFirst == null;
     }
 
-    public void encolar(int id, String prior) {
+    public void encolar(int id, String prior) { //SE LLAMA DESDE LA PROPIA COLA
         Pana newPana = new Pana(id, prior);
         if (isEmpty()) {
             this.pFirst = newPana;
@@ -23,6 +23,16 @@ public class Queue1 {
             this.pLast.setpNext(newPana);
         }
         this.pLast = newPana;
+        size++;
+    }
+    
+    public void enconlarDesdeOtraCola(Pana rPana) { //RECIBE AL PANA PARA ENCOLARLO CUANDO VIENE DE OTRA COLA
+        if (isEmpty()) {
+            this.pFirst = rPana;
+        } else {
+            this.pLast.setpNext(rPana);
+        }
+        this.pLast = rPana;
         size++;
     }
 

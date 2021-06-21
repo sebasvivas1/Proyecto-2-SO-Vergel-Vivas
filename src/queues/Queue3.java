@@ -33,6 +33,16 @@ public class Queue3 {
         return pAux;
     }
     
+    public void enconlarDesdeOtraCola(Pana rPana) { //RECIBE AL PANA PARA ENCOLARLO CUANDO VIENE DE OTRA COLA
+        if (isEmpty()) {
+            this.pFirst = rPana;
+        } else {
+            this.pLast.setpNext(rPana);
+        }
+        this.pLast = rPana;
+        size++;
+    }
+    
     public void showDato(){
         Pana pAux = this.pFirst;
         while(pAux != null){

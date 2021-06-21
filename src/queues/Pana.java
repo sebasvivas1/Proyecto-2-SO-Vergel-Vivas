@@ -5,6 +5,7 @@ public class Pana {
     private String prior;
     private String dato;
     private Pana pNext;
+    private int counter;
     
     public Pana(int id, String priority) {
         
@@ -45,6 +46,14 @@ public class Pana {
 
     public void setpNext(Pana next) {
         this.pNext = next;
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
     
     
