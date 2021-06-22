@@ -14,6 +14,7 @@ public class Pana {
         this.pNext = null;
         
         this.dato = id+priority;
+        this.counter = 0;
     }
 
     public int getId() {
@@ -54,6 +55,10 @@ public class Pana {
 
     public void setCounter(int counter) {
         this.counter = counter;
+    }
+    
+    public void addCounter() {
+        this.counter++;
     }
     
     

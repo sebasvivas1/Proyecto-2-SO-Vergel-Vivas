@@ -10,6 +10,8 @@ package gui;
  * @author sebastian
  */
 public class Interfaz extends javax.swing.JFrame {
+    
+    main main = new main();
 
     /**
      * Creates new form guii
@@ -17,6 +19,7 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.robotBox.setText("xXx");
 //        this.setResizable(false);
     }
 
@@ -33,21 +36,22 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        queue1Box = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        queue2Box = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        queue3Box = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        reparationBox = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
+        initSimulation = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        robotBox = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -67,27 +71,27 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel2.setText("MATTEL PANA'S 2 PRODUCTION");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        queue1Box.setEditable(false);
+        queue1Box.setBackground(new java.awt.Color(153, 153, 153));
+        queue1Box.setColumns(20);
+        queue1Box.setRows(5);
+        jScrollPane1.setViewportView(queue1Box);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        queue2Box.setEditable(false);
+        queue2Box.setBackground(new java.awt.Color(153, 153, 153));
+        queue2Box.setColumns(20);
+        queue2Box.setRows(5);
+        jScrollPane2.setViewportView(queue2Box);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
 
-        jTextArea3.setEditable(false);
-        jTextArea3.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        queue3Box.setEditable(false);
+        queue3Box.setBackground(new java.awt.Color(153, 153, 153));
+        queue3Box.setColumns(20);
+        queue3Box.setRows(5);
+        jScrollPane3.setViewportView(queue3Box);
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
 
@@ -108,11 +112,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         jScrollPane4.setBackground(new java.awt.Color(204, 204, 204));
 
-        jTextArea4.setEditable(false);
-        jTextArea4.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
+        reparationBox.setEditable(false);
+        reparationBox.setBackground(new java.awt.Color(153, 153, 153));
+        reparationBox.setColumns(20);
+        reparationBox.setRows(5);
+        jScrollPane4.setViewportView(reparationBox);
 
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, -1));
 
@@ -127,20 +131,24 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel7.setText("Robot");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 120, 60));
 
-        jScrollPane5.setBackground(new java.awt.Color(204, 204, 204));
-
-        jTextArea5.setEditable(false);
-        jTextArea5.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jScrollPane5.setViewportView(jTextArea5);
-
-        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, -1, -1));
-
         jLabel8.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("En revisión");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, -1, -1));
+
+        initSimulation.setText("initSimulation");
+        initSimulation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                initSimulationActionPerformed(evt);
+            }
+        });
+        jPanel1.add(initSimulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 150, 50));
+
+        robotBox.setEditable(false);
+        robotBox.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane6.setViewportView(robotBox);
+
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, 160, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,11 +158,17 @@ public class Interfaz extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void initSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_initSimulationActionPerformed
+        // TODO add your handling code here:
+        this.main.initSimulation(this.robotBox);
+        
+    }//GEN-LAST:event_initSimulationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,6 +207,7 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton initSimulation;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -206,11 +221,11 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTextArea queue1Box;
+    private javax.swing.JTextArea queue2Box;
+    private javax.swing.JTextArea queue3Box;
+    private javax.swing.JTextArea reparationBox;
+    private javax.swing.JTextPane robotBox;
     // End of variables declaration//GEN-END:variables
 }

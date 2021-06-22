@@ -64,4 +64,31 @@ public class Queue1 {
     public void toRepair() {
         
     }
+
+    public Pana getpFirst() {
+        return pFirst;
+    }
+
+    public void setpFirst(Pana pFirst) {
+        this.pFirst = pFirst;
+    }
+
+    public Pana getpLast() {
+        return pLast;
+    }
+
+    public void setpLast(Pana pLast) {
+        this.pLast = pLast;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+    
+    
+    
 }

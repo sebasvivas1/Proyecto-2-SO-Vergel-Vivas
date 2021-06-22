@@ -24,7 +24,15 @@ public class ReparationQueue {
         this.pLast = rPana;
         size++;
     }
-    
+
+    public Pana desencolar() {
+        Pana pAux = this.pFirst;
+        this.pFirst = this.pFirst.getpNext();
+        size--;
+        pAux.setpNext(null);
+        return pAux;
+    }
+
     public void showDato() {
         Pana pAux = this.pFirst;
         while (pAux != null) {
@@ -57,6 +65,5 @@ public class ReparationQueue {
     public void setSize(int size) {
         this.size = size;
     }
-    
-    
+
 }
