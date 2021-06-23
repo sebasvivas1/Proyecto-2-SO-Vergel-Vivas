@@ -5,6 +5,8 @@ public class Queue1 {
     private Pana pFirst;
     private Pana pLast;
     private int size;
+    
+    javax.swing.JTextPane showQueue1;
 
     public Queue1() {
         this.pFirst = this.pLast = null;
@@ -45,12 +47,19 @@ public class Queue1 {
     }
 
     public void showDato() {
+        String queue = "";
         Pana pAux = this.pFirst;
         while (pAux != null) {
-            System.out.println(pAux.getDato());
+            queue += pAux.getDato() + "\n";
             pAux = pAux.getpNext();
 
         }
+        this.showQueue1.setText(queue);
+        System.out.println(queue);
+    }
+    
+    public void showInterfaz(javax.swing.JTextPane showQueue1){
+        this.showQueue1 = showQueue1;
     }
 
     public Pana firstPana() {

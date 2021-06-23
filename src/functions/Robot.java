@@ -11,14 +11,14 @@ import queues.Pana;
 public class Robot extends Thread{
     private Semaphore mutex;
     Statistics chances = new Statistics();
+    private int time = 10000;
     
-    private javax.swing.JTextPane robotBox;
-    private int time = 500;
+    javax.swing.JTextPane robotBox;
     
     
     public void checkPanaQueue1(Queue1 queue1, ReparationQueue repQueue){
         System.out.println("Se está revisando el pana...");
-        robotBox.setText(queue1.getpFirst().getDato());
+        this.robotBox.setText("FUNCIONA");
         try {
             Thread.sleep(time);
         } catch (Exception e) {
@@ -52,7 +52,7 @@ public class Robot extends Thread{
     
     public void checkPanaQueue2(Queue2 queue2, ReparationQueue repQueue){
         System.out.println("Se está revisando el pana...");
-        robotBox.setText(queue2.getpFirst().getDato());
+        this.robotBox.setText("FUNCIONA");
 
         try {
             Thread.sleep(time);
@@ -87,7 +87,7 @@ public class Robot extends Thread{
     
     public void checkPanaQueue3(Queue3 queue3, ReparationQueue repQueue){
         System.out.println("Se está revisando el pana...");
-        robotBox.setText(queue3.getpFirst().getDato());
+        this.robotBox.setText("FUNCIONA");
 
         try {
             Thread.sleep(time);

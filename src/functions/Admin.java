@@ -18,11 +18,16 @@ public class Admin {
     int revisados = 0;
 
     int contadorPana = 100;
+    
+    javax.swing.JTextPane robotBox;
+    javax.swing.JTextPane showQueue1;
+    javax.swing.JTextPane showQueue2;
+    javax.swing.JTextPane showQueue3;
+    javax.swing.JTextPane repairsQueue;
 
-    public void checkIfAllEmpty(Queue1 queue1, Queue2 queue2, Queue3 queue3, ReparationQueue repQueue, javax.swing.JTextPane robotBox) {
+    public void checkIfAllEmpty(Queue1 queue1, Queue2 queue2, Queue3 queue3, ReparationQueue repQueue) {
 
-        robot.showRobot(robotBox);
-
+       
         if (queue1.isEmpty() && queue2.isEmpty() && queue3.isEmpty()) {
             System.out.println("Las 3 colas estan vacias. Se procede a encolar un Pana aleatoriamente: ");
             int priority = chances.createPana();
@@ -64,12 +69,20 @@ public class Admin {
         repQueue.showDato();
         System.out.println("\n");
 
-        this.checkQueues(queue1, queue2, queue3, repQueue, robotBox);
+        this.checkQueues(queue1, queue2, queue3, repQueue, robotBox, showQueue1, showQueue2, showQueue3, repairsQueue);
 
     }
 
-    public void checkQueues(Queue1 queue1, Queue2 queue2, Queue3 queue3, ReparationQueue repQueue, javax.swing.JTextPane robotBox) {
-
+    public void checkQueues(Queue1 queue1, Queue2 queue2, Queue3 queue3, ReparationQueue repQueue, javax.swing.JTextPane robotBox, javax.swing.JTextPane showQueue1, javax.swing.JTextPane showQueue2, javax.swing.JTextPane showQueue3, javax.swing.JTextPane repairsQueue) {
+        
+        this.robotBox = robotBox;
+        this.showQueue1 = showQueue1;
+        this.showQueue1 = showQueue2;
+        this.showQueue1 = showQueue3;
+        this.repairsQueue = repairsQueue;
+        
+         robot.showRobot(this.robotBox);
+        
         if (!queue1.isEmpty()) {
             System.out.println("El robot va a revisar un Pana de la lista de prioridad 1.");
             revisados++;
@@ -214,7 +227,7 @@ public class Admin {
                     robot.checkPanaQueue3(queue3, repQueue);
 
                 } else {
-                    this.checkIfAllEmpty(queue1, queue2, queue3, repQueue, robotBox);
+                    this.checkIfAllEmpty(queue1, queue2, queue3, repQueue);
                 }
             }
 

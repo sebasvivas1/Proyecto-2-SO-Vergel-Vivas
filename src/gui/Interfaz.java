@@ -19,7 +19,7 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.robotBox.setText("xXx");
+        //this.robotBox.setText("xXx");
 //        this.setResizable(false);
     }
 
@@ -35,23 +35,23 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        queue1Box = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        queue2Box = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        queue3Box = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        reparationBox = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         initSimulation = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
+        repairsQueue = new javax.swing.JTextPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
         robotBox = new javax.swing.JTextPane();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        queue2 = new javax.swing.JTextPane();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        queue3 = new javax.swing.JTextPane();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        queue1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -71,30 +71,6 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel2.setText("MATTEL PANA'S 2 PRODUCTION");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
 
-        queue1Box.setEditable(false);
-        queue1Box.setBackground(new java.awt.Color(153, 153, 153));
-        queue1Box.setColumns(20);
-        queue1Box.setRows(5);
-        jScrollPane1.setViewportView(queue1Box);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
-
-        queue2Box.setEditable(false);
-        queue2Box.setBackground(new java.awt.Color(153, 153, 153));
-        queue2Box.setColumns(20);
-        queue2Box.setRows(5);
-        jScrollPane2.setViewportView(queue2Box);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
-
-        queue3Box.setEditable(false);
-        queue3Box.setBackground(new java.awt.Color(153, 153, 153));
-        queue3Box.setColumns(20);
-        queue3Box.setRows(5);
-        jScrollPane3.setViewportView(queue3Box);
-
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
-
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Prioridad 3");
@@ -109,16 +85,6 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Prioridad 2");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
-
-        jScrollPane4.setBackground(new java.awt.Color(204, 204, 204));
-
-        reparationBox.setEditable(false);
-        reparationBox.setBackground(new java.awt.Color(153, 153, 153));
-        reparationBox.setColumns(20);
-        reparationBox.setRows(5);
-        jScrollPane4.setViewportView(reparationBox);
-
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -144,11 +110,35 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jPanel1.add(initSimulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 150, 50));
 
-        robotBox.setEditable(false);
-        robotBox.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane6.setViewportView(robotBox);
+        repairsQueue.setEditable(false);
+        repairsQueue.setBackground(new java.awt.Color(153, 153, 153));
+        jScrollPane6.setViewportView(repairsQueue);
 
-        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, 160, 70));
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 160, 70));
+
+        robotBox.setEditable(false);
+        robotBox.setBackground(new java.awt.Color(153, 153, 153));
+        jScrollPane7.setViewportView(robotBox);
+
+        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, 160, 70));
+
+        queue2.setEditable(false);
+        queue2.setBackground(new java.awt.Color(153, 153, 153));
+        jScrollPane8.setViewportView(queue2);
+
+        jPanel1.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 160, 70));
+
+        queue3.setEditable(false);
+        queue3.setBackground(new java.awt.Color(153, 153, 153));
+        jScrollPane9.setViewportView(queue3);
+
+        jPanel1.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 160, 70));
+
+        queue1.setEditable(false);
+        queue1.setBackground(new java.awt.Color(153, 153, 153));
+        jScrollPane10.setViewportView(queue1);
+
+        jPanel1.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 160, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,7 +156,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void initSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_initSimulationActionPerformed
         // TODO add your handling code here:
-        this.main.initSimulation(this.robotBox);
+        this.main.initSimulation(this.repairsQueue, this.queue1, this.queue2, this.queue3, this.repairsQueue);
         
     }//GEN-LAST:event_initSimulationActionPerformed
 
@@ -217,15 +207,15 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextArea queue1Box;
-    private javax.swing.JTextArea queue2Box;
-    private javax.swing.JTextArea queue3Box;
-    private javax.swing.JTextArea reparationBox;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextPane queue1;
+    private javax.swing.JTextPane queue2;
+    private javax.swing.JTextPane queue3;
+    private javax.swing.JTextPane repairsQueue;
     private javax.swing.JTextPane robotBox;
     // End of variables declaration//GEN-END:variables
 }

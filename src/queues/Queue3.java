@@ -5,6 +5,8 @@ public class Queue3 {
     private Pana pLast;
     private int size;
     
+    javax.swing.JTextPane showQueue3;
+    
     public Queue3() {
         this.pFirst = this.pLast = null;
         this.size = 0;
@@ -43,14 +45,20 @@ public class Queue3 {
         size++;
     }
     
-    public void showDato(){
+    public void showDato() {
+        String queue = "";
         Pana pAux = this.pFirst;
-        while(pAux != null){
-            System.out.println(pAux.getDato()); 
+        while (pAux != null) {
+            queue += pAux.getDato() + "\n";
             pAux = pAux.getpNext();
-        
+
         }
+        this.showQueue3.setText("FUNCIONA");
     }
+    public void showInterfaz(javax.swing.JTextPane showQueue3){
+        this.showQueue3 = showQueue3;
+    }
+
     
     public Pana firstPana(){
         return this.pFirst;
