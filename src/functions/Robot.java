@@ -44,6 +44,7 @@ public class Robot extends Thread{
             // Llevar al pana a la cola de reparaciones/mejoras
             System.out.println("El pana necesita reparaciones o mejoras.");
             Pana pAux = queue1.desencolar();
+            pAux.setPrior("1");
             repQueue.enconlar(pAux);
             
         }
@@ -78,6 +79,7 @@ public class Robot extends Thread{
             // Llevar al pana a la cola de reparaciones/mejoras
             System.out.println("El pana necesita reparaciones o mejoras.");
             Pana pAux = queue2.desencolar();
+            pAux.setPrior("2");
             repQueue.enconlar(pAux);
             
         }
@@ -112,6 +114,7 @@ public class Robot extends Thread{
             // Llevar al pana a la cola de reparaciones/mejoras
             System.out.println("El pana necesita reparaciones o mejoras.");
             Pana pAux = queue3.desencolar();
+            pAux.setPrior("3");
             repQueue.enconlar(pAux);
             
         }

@@ -33,18 +33,18 @@ public class Statistics {
     }
 
     public int createPana() {
-        int upperbound = 3;
+        int upperbound = 30;
 
         int random_int = rand.nextInt(upperbound);
 
-        if (random_int == 0) {
+        if (random_int <=10 ) {
             System.out.println("El pana va a prioridad 1");
         }
-        if (random_int == 1) {
+        if (random_int <=20 && random_int > 10) {
             System.out.println("El pana va a prioridad 2");
         }
-        if (random_int == 2) {
-            System.out.println("El panaa va a prioridad 3.");
+        if (random_int <=30 && random_int > 20) {
+            System.out.println("El pana va a prioridad 3.");
         }
         return random_int;
     }

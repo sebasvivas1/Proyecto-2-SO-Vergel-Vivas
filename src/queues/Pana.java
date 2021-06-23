@@ -5,7 +5,7 @@ public class Pana {
     private String prior;
     private String dato;
     private Pana pNext;
-    private int counter;
+    private int counter = 0;
     
     public Pana(int id, String priority) {
         
@@ -13,7 +13,7 @@ public class Pana {
         this.prior = priority;
         this.pNext = null;
         
-        this.dato = id+priority;
+        this.dato = "ID"+id+priority;
         this.counter = 0;
     }
 
