@@ -70,55 +70,55 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Administrador");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 180, 60));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("           PANA'S 2 PRODUCTION");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Prioridad 3");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Reparacion y Mejoras");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Prioridad 2");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Prioridad 1");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Robot");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, 120, 60));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("En revisión");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, -1, -1));
 
         initSimulation.setBackground(new java.awt.Color(153, 153, 153));
         initSimulation.setForeground(new java.awt.Color(0, 0, 0));
-        initSimulation.setText("Load Data");
+        initSimulation.setText("Cargar Data");
         initSimulation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 initSimulationActionPerformed(evt);
             }
         });
-        jPanel1.add(initSimulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 110, 50));
+        jPanel1.add(initSimulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 170, 50));
 
         repairsQueue.setEditable(false);
         repairsQueue.setBackground(new java.awt.Color(153, 153, 153));
@@ -157,13 +157,13 @@ public class Interfaz extends javax.swing.JFrame {
 
         refresh.setBackground(new java.awt.Color(153, 153, 153));
         refresh.setForeground(new java.awt.Color(0, 0, 0));
-        refresh.setText("initSim");
+        refresh.setText("Iniciar Simulacion");
         refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshActionPerformed(evt);
             }
         });
-        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 470, 80, 50));
+        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, 170, 50));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MAT.png"))); // NOI18N
         jLabel9.setText("jLabel9");

@@ -56,7 +56,7 @@ public class ReparationQueue {
                 temp = temp.getpNext();
             }
         } else {
-            txt = "       No hay juguetes en \n              esta cola";
+            txt = "Cola Vacia";
         }
         return txt;
     }

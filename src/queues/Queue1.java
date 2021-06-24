@@ -67,7 +67,7 @@ public class Queue1 {
                temp = temp.getpNext();
             }
         } 
-        else { txt = "       No hay juguetes en \n              esta cola"; }
+        else { txt = "Cola Vacia"; }
         return txt;
     }
     
