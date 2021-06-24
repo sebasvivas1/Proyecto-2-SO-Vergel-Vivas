@@ -5,13 +5,18 @@
  */
 package gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sebastian
  */
 public class Interfaz extends javax.swing.JFrame {
-    
+
     main main = new main();
+
+    boolean initSim = false;
+    boolean running = false;
 
     /**
      * Creates new form guii
@@ -52,6 +57,7 @@ public class Interfaz extends javax.swing.JFrame {
         queue3 = new javax.swing.JTextPane();
         jScrollPane10 = new javax.swing.JScrollPane();
         queue1 = new javax.swing.JTextPane();
+        refresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -102,7 +108,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel8.setText("En revisión");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, -1, -1));
 
-        initSimulation.setText("initSimulation");
+        initSimulation.setText("Load Data");
         initSimulation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 initSimulationActionPerformed(evt);
@@ -140,6 +146,14 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 160, 70));
 
+        refresh.setText("initSim");
+        refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshActionPerformed(evt);
+            }
+        });
+        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 80, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -155,10 +169,31 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_initSimulationActionPerformed
-        // TODO add your handling code here:
-        this.main.initSimulation(this.robotBox, this.queue1, this.queue2, this.queue3, this.repairsQueue);
-        
+
+        if (!initSim) {
+            this.main.initSimulation(this.robotBox, this.queue1, this.queue2, this.queue3, this.repairsQueue);
+            this.initSim = true;
+        } else {
+            JOptionPane.showMessageDialog(null, "Data cargada", "ERROR", 2);
+
+        }
+
+
     }//GEN-LAST:event_initSimulationActionPerformed
+
+    private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
+        if (initSim && !running) {
+            this.main.start();
+            this.running = true;
+        } else {
+            if (running) {
+                JOptionPane.showMessageDialog(null, "SIMULACION INICIADA", "ERROR", 2);
+            } else {
+                JOptionPane.showMessageDialog(null, "CARGUE DATOS", "ERROR", 2);
+
+            }
+        }
+    }//GEN-LAST:event_refreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,6 +250,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextPane queue1;
     private javax.swing.JTextPane queue2;
     private javax.swing.JTextPane queue3;
+    private javax.swing.JButton refresh;
     private javax.swing.JTextPane repairsQueue;
     private javax.swing.JTextPane robotBox;
     // End of variables declaration//GEN-END:variables

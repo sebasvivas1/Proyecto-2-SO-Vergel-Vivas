@@ -20,21 +20,11 @@ public class Admin {
     int contadorPana = 100;
 
     javax.swing.JTextPane robotBox;
-    javax.swing.JTextPane showQueue1;
-    javax.swing.JTextPane showQueue2;
-    javax.swing.JTextPane showQueue3;
     javax.swing.JTextPane repairsQueue;
 
     public void showInterface(
-            javax.swing.JTextPane robotBox,
-            javax.swing.JTextPane showQueue1,
-            javax.swing.JTextPane showQueue2,
-            javax.swing.JTextPane showQueue3,
-            javax.swing.JTextPane repairsQueue) {
+            javax.swing.JTextPane robotBox, javax.swing.JTextPane repairsQueue) {
         this.robotBox = robotBox;
-        this.showQueue1 = showQueue1;
-        this.showQueue2 = showQueue2;
-        this.showQueue3 = showQueue3;
         this.repairsQueue = repairsQueue;
     }
 
@@ -67,7 +57,6 @@ public class Admin {
             revisados++;
             robot.checkPanaQueue1(queue1, repQueue);
             queue1.showDato();
-
         } else {
 
             if (!queue2.isEmpty()) {
@@ -118,6 +107,7 @@ public class Admin {
     }
 
     public void blockedQueue(ReparationQueue repQueue, Queue1 queue1, Queue2 queue2, Queue3 queue3) {
+        repQueue.showDato();
         int result = chances.goesToReparation();
 
         if (result <= 44) {
