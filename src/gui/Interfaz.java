@@ -58,6 +58,8 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         queue1 = new javax.swing.JTextPane();
         refresh = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -70,95 +72,114 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Administrador");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 180, 60));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 180, 60));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("MATTEL PANA'S 2 PRODUCTION");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
+        jLabel2.setText("           PANA'S 2 PRODUCTION");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Prioridad 3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Reparacion y Mejoras");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Prioridad 2");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Prioridad 1");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Robot");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 120, 60));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, 120, 60));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("En revisión");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, -1, -1));
 
+        initSimulation.setBackground(new java.awt.Color(153, 153, 153));
+        initSimulation.setForeground(new java.awt.Color(0, 0, 0));
         initSimulation.setText("Load Data");
         initSimulation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 initSimulationActionPerformed(evt);
             }
         });
-        jPanel1.add(initSimulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 150, 50));
+        jPanel1.add(initSimulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 110, 50));
 
         repairsQueue.setEditable(false);
         repairsQueue.setBackground(new java.awt.Color(153, 153, 153));
+        repairsQueue.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jScrollPane6.setViewportView(repairsQueue);
 
-        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 160, 70));
+        jPanel1.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, 170, 70));
 
         robotBox.setEditable(false);
         robotBox.setBackground(new java.awt.Color(153, 153, 153));
+        robotBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jScrollPane7.setViewportView(robotBox);
 
-        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, 160, 70));
+        jPanel1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 170, 70));
 
         queue2.setEditable(false);
         queue2.setBackground(new java.awt.Color(153, 153, 153));
+        queue2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jScrollPane8.setViewportView(queue2);
 
-        jPanel1.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 160, 70));
+        jPanel1.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 170, 70));
 
         queue3.setEditable(false);
         queue3.setBackground(new java.awt.Color(153, 153, 153));
+        queue3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jScrollPane9.setViewportView(queue3);
 
-        jPanel1.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 160, 70));
+        jPanel1.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 180, 70));
 
         queue1.setEditable(false);
         queue1.setBackground(new java.awt.Color(153, 153, 153));
+        queue1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jScrollPane10.setViewportView(queue1);
 
-        jPanel1.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 160, 70));
+        jPanel1.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 180, 70));
 
+        refresh.setBackground(new java.awt.Color(153, 153, 153));
+        refresh.setForeground(new java.awt.Color(0, 0, 0));
         refresh.setText("initSim");
         refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshActionPerformed(evt);
             }
         });
-        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 80, 50));
+        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 470, 80, 50));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MAT.png"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -50, 250, 260));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/126040743-high-resolution-brown-wood-backgrounds-boards-planking-bumpy-wooden-table-top.jpg"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-230, -90, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 857, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 839, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,6 +255,7 @@ public class Interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton initSimulation;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -241,17 +263,18 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextPane queue1;
-    private javax.swing.JTextPane queue2;
-    private javax.swing.JTextPane queue3;
+    public static javax.swing.JTextPane queue1;
+    public static javax.swing.JTextPane queue2;
+    public static javax.swing.JTextPane queue3;
     private javax.swing.JButton refresh;
-    private javax.swing.JTextPane repairsQueue;
-    private javax.swing.JTextPane robotBox;
+    public static javax.swing.JTextPane repairsQueue;
+    public static javax.swing.JTextPane robotBox;
     // End of variables declaration//GEN-END:variables
 }

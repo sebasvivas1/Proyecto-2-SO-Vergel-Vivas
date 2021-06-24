@@ -58,6 +58,19 @@ public class Queue1 {
         System.out.println(queue);
     }
     
+    public String showInfo() {
+        String txt = "" ;
+        if (!isEmpty()) {
+            Pana temp = pFirst;
+            while (temp != null) {
+               txt +=temp.getDato()+"\n";
+               temp = temp.getpNext();
+            }
+        } 
+        else { txt = "       No hay juguetes en \n              esta cola"; }
+        return txt;
+    }
+    
     public void showInterfaz(javax.swing.JTextPane showQueue1){
         this.showQueue1 = showQueue1;
     }

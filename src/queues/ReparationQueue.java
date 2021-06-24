@@ -7,7 +7,6 @@ public class ReparationQueue {
     private int size;
     javax.swing.JTextPane repairsQueue;
 
-
     public ReparationQueue() {
         this.pFirst = this.pLast = null;
         this.size = 0;
@@ -47,7 +46,22 @@ public class ReparationQueue {
         System.out.println(queue);
 
     }
-    public void showInterfaz(javax.swing.JTextPane repairsQueue){
+
+    public String showInfo() {
+        String txt = "";
+        if (!isEmpty()) {
+            Pana temp = pFirst;
+            while (temp != null) {
+                txt += temp.getDato() + "\n";
+                temp = temp.getpNext();
+            }
+        } else {
+            txt = "       No hay juguetes en \n              esta cola";
+        }
+        return txt;
+    }
+
+    public void showInterfaz(javax.swing.JTextPane repairsQueue) {
         this.repairsQueue = repairsQueue;
     }
 

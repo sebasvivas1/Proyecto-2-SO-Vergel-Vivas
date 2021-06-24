@@ -57,6 +57,19 @@ public class Queue2 {
 
     }
     
+        public String showInfo() {
+        String txt = "" ;
+        if (!isEmpty()) {
+            Pana temp = pFirst;
+            while (temp != null) {
+               txt +=temp.getDato()+"\n";
+               temp = temp.getpNext();
+            }
+        } 
+        else { txt = "       No hay juguetes en \n              esta cola"; }
+        return txt;
+    }
+    
     public void showInterfaz(javax.swing.JTextPane showQueue2){
         this.showQueue2 = showQueue2;
     }

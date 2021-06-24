@@ -6,6 +6,7 @@ import queues.Queue3;
 import queues.ReparationQueue;
 import functions.Statistics;
 import functions.Robot;
+import gui.Interfaz;
 
 import queues.Pana;
 
@@ -35,13 +36,18 @@ public class Admin {
 
             if (priority <= 10) {
                 queue1.encolar(contadorPana, "1");
+                Interfaz.queue1.setText(queue1.showInfo());
 
             }
             if (priority <= 20 && priority > 10) {
                 queue2.encolar(contadorPana, "2");
+                Interfaz.queue2.setText(queue2.showInfo());
+
             }
             if (priority <= 30 && priority > 20) {
                 queue3.encolar(contadorPana, "3");
+                Interfaz.queue3.setText(queue3.showInfo());
+
             }
         } else {
         }
@@ -53,6 +59,7 @@ public class Admin {
     public void checkQueues(Queue1 queue1, Queue2 queue2, Queue3 queue3, ReparationQueue repQueue) {
 
         robot.showRobot(this.robotBox);
+        this.showData(queue1, queue2, queue3, repQueue);
         if (!queue1.isEmpty()) {
             revisados++;
             robot.checkPanaQueue1(queue1, repQueue);
@@ -64,7 +71,6 @@ public class Admin {
                 revisados++;
 
                 this.addCounter2(queue2, queue1);
-//               
                 robot.checkPanaQueue2(queue2, repQueue);
                 queue2.showDato();
             } else if (queue2.isEmpty()) {
@@ -131,6 +137,7 @@ public class Admin {
             repQueue.enconlar(pAux);
 
         }
+        this.showData(queue1, queue2, queue3, repQueue);
     }
 
     public void addPana(Queue1 queue1, Queue2 queue2, Queue3 queue3) {
@@ -141,12 +148,15 @@ public class Admin {
 
                 // Se añade a la lista de prioridad 1.
                 queue1.encolar(contadorPana, "1");
+                Interfaz.queue1.setText(queue1.showInfo());
                 contadorPana++;
             }
             if (priorList <= 20 && priorList > 10) {
 
                 // Se añade a la lista de prioridad 2.
                 queue2.encolar(contadorPana, "2");
+                Interfaz.queue2.setText(queue2.showInfo());
+
                 contadorPana++;
             }
 
@@ -154,9 +164,12 @@ public class Admin {
 
                 // Se añade a la lista de prioridad 3.
                 queue3.encolar(contadorPana, "3");
+                Interfaz.queue3.setText(queue3.showInfo());
+
                 contadorPana++;
             }
         }
+        
     }
 
     public void addCounter2(Queue2 queue2, Queue1 queue1) {
@@ -196,6 +209,14 @@ public class Admin {
                 queue3.enconlarDesdeOtraCola(pReQueue);
             }
         }
+    }
+
+    public void showData(Queue1 queue1, Queue2 queue2, Queue3 queue3, ReparationQueue repQueue) {
+        Interfaz.queue1.setText(queue1.showInfo());
+        Interfaz.queue2.setText(queue2.showInfo());
+        Interfaz.queue3.setText(queue3.showInfo());
+        Interfaz.repairsQueue.setText(repQueue.showInfo());
+
     }
 
 }

@@ -11,14 +11,16 @@ import queues.Pana;
 public class Robot extends Thread{
     private Semaphore mutex;
     Statistics chances = new Statistics();
-    private int time = 500;
+    private int time = 1000;
     
     javax.swing.JTextPane robotBox;
     
     
     public void checkPanaQueue1(Queue1 queue1, ReparationQueue repQueue){
         try {
-            this.robotBox.setText("xdxdxd1");
+            Pana pAux = queue1.getpFirst();
+            this.robotBox.setText(pAux.getDato());
+
             Thread.sleep(time);
         } catch (Exception e) {
             System.out.println(e);
@@ -44,12 +46,14 @@ public class Robot extends Thread{
             repQueue.enconlar(pAux);
             
         }
+        this.robotBox.setText("");
     }
     
     public void checkPanaQueue2(Queue2 queue2, ReparationQueue repQueue){
 
         try {
-            this.robotBox.setText("xdxdxd2");
+            Pana pAux = queue2.getpFirst();
+            this.robotBox.setText(pAux.getDato());
             Thread.sleep(time);
         } catch (Exception e) {
             System.out.println(e);
@@ -75,12 +79,15 @@ public class Robot extends Thread{
             repQueue.enconlar(pAux);
             
         }
+                this.robotBox.setText("");
+
     }  
     
     public void checkPanaQueue3(Queue3 queue3, ReparationQueue repQueue){
 
         try {
-            this.robotBox.setText("xdxdxd3");
+            Pana pAux = queue3.getpFirst();
+            this.robotBox.setText(pAux.getDato());
             Thread.sleep(time);
         } catch (Exception e) {
             System.out.println(e);
@@ -106,6 +113,8 @@ public class Robot extends Thread{
             repQueue.enconlar(pAux);
             
         }
+                this.robotBox.setText("");
+
     }  
     
     public void showRobot(javax.swing.JTextPane robotBox) {
