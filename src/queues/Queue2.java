@@ -52,7 +52,9 @@ public class Queue2 {
             pAux = pAux.getpNext();
 
         }
-        this.showQueue2.setText("FUNCIONA");
+        this.showQueue2.setText(queue);
+        System.out.println(queue);
+
     }
     
     public void showInterfaz(javax.swing.JTextPane showQueue2){

@@ -156,7 +156,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void initSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_initSimulationActionPerformed
         // TODO add your handling code here:
-        this.main.initSimulation(this.repairsQueue, this.queue1, this.queue2, this.queue3, this.repairsQueue);
+        this.main.initSimulation(this.robotBox, this.queue1, this.queue2, this.queue3, this.repairsQueue);
         
     }//GEN-LAST:event_initSimulationActionPerformed
 

@@ -7,6 +7,7 @@ import queues.ReparationQueue;
 import functions.Statistics;
 import functions.Admin;
 import functions.Robot;
+import queues.Pana;
 
 public class main {
     
@@ -21,8 +22,13 @@ public class main {
     Queue3 queue3 = new Queue3();
     ReparationQueue repQueue = new ReparationQueue();
 
-    Statistics chances = new Statistics();
     Admin admin = new Admin();
+    
+    Pana xd = new Pana(1, "1");
+    Pana xd1 = new Pana(2, "1");
+    Pana xd2= new Pana(3, "1");
+    Pana xd3 = new Pana(4, "1");
+    Pana xd4 = new Pana(5, "1");
 
     public void initSimulation(javax.swing.JTextPane robotBox, javax.swing.JTextPane showQueue1,javax.swing.JTextPane showQueue2, javax.swing.JTextPane showQueue3, javax.swing.JTextPane repairsQueue) {
         this.robotBox = robotBox;
@@ -35,12 +41,23 @@ public class main {
         this.queue2.showInterfaz(this.showQueue2);
         this.queue3.showInterfaz(this.showQueue3);
         
+        //this.queue1.enconlarDesdeOtraCola(xd);
+        //this.queue1.enconlarDesdeOtraCola(xd1);
+        //this.queue1.enconlarDesdeOtraCola(xd2);
+        //this.queue1.enconlarDesdeOtraCola(xd3);
+        //this.queue1.showDato();
         
-       
-        while (true) {
-            
-            admin.checkQueues(queue1, queue2, queue3, repQueue, this.robotBox, this.showQueue1, this.showQueue2, this.showQueue3, this.repairsQueue);
-        }
+        admin.showInterface(this.robotBox, this.showQueue1, this.showQueue2, this.showQueue3, this.repairsQueue);
+        
+        this.running();
+    }
+    
+    public void running(){
+       // while(true){
+      admin.checkQueues(queue1, queue2, queue3, repQueue);
+        //}
+        
+            //this.initSimulation(robotBox, showQueue1, showQueue2, showQueue3, repairsQueue);
     }
 
 }

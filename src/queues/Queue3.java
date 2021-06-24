@@ -1,24 +1,25 @@
 package queues;
 
 public class Queue3 {
+
     private Pana pFirst;
     private Pana pLast;
     private int size;
-    
+
     javax.swing.JTextPane showQueue3;
-    
+
     public Queue3() {
         this.pFirst = this.pLast = null;
         this.size = 0;
     }
-    
+
     public boolean isEmpty() {
         return this.pFirst == null;
     }
-    
+
     public void encolar(int id, String prior) {
         Pana newPana = new Pana(id, prior);
-        if(isEmpty()) {
+        if (isEmpty()) {
             this.pFirst = newPana;
         } else {
             this.pLast.setpNext(newPana);
@@ -26,7 +27,7 @@ public class Queue3 {
         this.pLast = newPana;
         size++;
     }
-    
+
     public Pana desencolar() {
         Pana pAux = this.pFirst;
         this.pFirst = this.pFirst.getpNext();
@@ -34,7 +35,7 @@ public class Queue3 {
         pAux.setpNext(null);
         return pAux;
     }
-    
+
     public void enconlarDesdeOtraCola(Pana rPana) { //RECIBE AL PANA PARA ENCOLARLO CUANDO VIENE DE OTRA COLA
         if (isEmpty()) {
             this.pFirst = rPana;
@@ -44,7 +45,7 @@ public class Queue3 {
         this.pLast = rPana;
         size++;
     }
-    
+
     public void showDato() {
         String queue = "";
         Pana pAux = this.pFirst;
@@ -53,18 +54,20 @@ public class Queue3 {
             pAux = pAux.getpNext();
 
         }
-        this.showQueue3.setText("FUNCIONA");
+        this.showQueue3.setText(queue);
+        System.out.println(queue);
+
     }
-    public void showInterfaz(javax.swing.JTextPane showQueue3){
+
+    public void showInterfaz(javax.swing.JTextPane showQueue3) {
         this.showQueue3 = showQueue3;
     }
 
-    
-    public Pana firstPana(){
+    public Pana firstPana() {
         return this.pFirst;
     }
-    
-    public int queue1Size(){
+
+    public int queue1Size() {
         return size;
     }
 
@@ -91,6 +94,5 @@ public class Queue3 {
     public void setSize(int size) {
         this.size = size;
     }
-    
-    
+
 }
