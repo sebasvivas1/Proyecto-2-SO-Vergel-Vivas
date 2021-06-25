@@ -11,7 +11,7 @@ import queues.Pana;
 public class Robot extends Thread{
     private Semaphore mutex;
     Statistics chances = new Statistics();
-    private int time = 1000;
+    private int time = 200;
     
     javax.swing.JTextPane robotBox;
     

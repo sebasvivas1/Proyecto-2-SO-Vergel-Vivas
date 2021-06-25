@@ -62,6 +62,7 @@ public class Admin {
         this.showData(queue1, queue2, queue3, repQueue);
         if (!queue1.isEmpty()) {
             revisados++;
+            this.addCounter(queue2, queue1, queue3);
             robot.checkPanaQueue1(queue1, repQueue);
             queue1.showDato();
         } else {
@@ -70,7 +71,7 @@ public class Admin {
 
                 revisados++;
 
-                this.addCounter2(queue2, queue1);
+                this.addCounter(queue2, queue1, queue3);
                 robot.checkPanaQueue2(queue2, repQueue);
                 queue2.showDato();
             } else if (queue2.isEmpty()) {
@@ -79,7 +80,7 @@ public class Admin {
 
                     revisados++;
 
-                    this.addCounter3(queue3, queue2);
+                    this.addCounter(queue2, queue1, queue3);
                     Pana pAux = queue3.getpFirst();
 
                     if (pAux.getCounter() == 15) {
@@ -169,46 +170,54 @@ public class Admin {
                 contadorPana++;
             }
         }
-        
+
     }
 
-    public void addCounter2(Queue2 queue2, Queue1 queue1) {
-        Pana pAux = queue2.desencolar();
-        queue2.enconlarDesdeOtraCola(pAux);
-        while (pAux != queue2.getpFirst()) {
-            Pana pAddCounter = queue2.getpFirst();
-            pAddCounter.addCounter();
+    public void addCounter(Queue2 queue2, Queue1 queue1, Queue3 queue3) {
 
-            if (pAddCounter.getCounter() == 15) {
-                pAddCounter.setCounter(0);
-                queue1.enconlarDesdeOtraCola(pAddCounter);
-                queue2.desencolar();
-            } else {
+        if (!queue2.isEmpty()) {
+            Pana pAux = queue2.desencolar();
+            queue2.enconlarDesdeOtraCola(pAux);
+            while (pAux != queue2.getpFirst()) {
+                Pana pAddCounter = queue2.getpFirst();
+                pAddCounter.addCounter();
 
-                Pana pReQueue = queue2.desencolar();
-                queue2.enconlarDesdeOtraCola(pReQueue);
+                if (pAddCounter.getCounter() == 15) {
+                    pAddCounter.setCounter(0);
+                    System.out.println("El Pana: " + pAddCounter.getDato() + " ha sido cambiado a la cola de prioridad 1");
+
+                    queue1.enconlarDesdeOtraCola(pAddCounter);
+                    queue2.desencolar();
+                } else {
+
+                    Pana pReQueue = queue2.desencolar();
+                    queue2.enconlarDesdeOtraCola(pReQueue);
+                }
             }
+        } else {
+            System.out.println("Nada en esta cola (2)");
         }
-    }
+        if (!queue3.isEmpty()) {
+            Pana pAux2 = queue3.desencolar();
+            queue3.enconlarDesdeOtraCola(pAux2);
+            while (pAux2 != queue3.getpFirst()) {
+                Pana pAddCounter = queue3.getpFirst();
+                pAddCounter.addCounter();
 
-    public void addCounter3(Queue3 queue3, Queue2 queue2) {
-        Pana pAux = queue3.desencolar();
-        queue3.enconlarDesdeOtraCola(pAux);
-        while (pAux != queue3.getpFirst()) {
-            Pana pAddCounter = queue3.getpFirst();
-            pAddCounter.addCounter();
-
-            if (pAddCounter.getCounter() == 15) {
-
-                pAddCounter.setCounter(0);
-                queue2.enconlarDesdeOtraCola(pAddCounter);
-                queue3.desencolar();
-            } else {
-
-                Pana pReQueue = queue3.desencolar();
-                queue3.enconlarDesdeOtraCola(pReQueue);
+                if (pAddCounter.getCounter() == 15) {
+                    pAddCounter.setCounter(0);
+                    System.out.println("El Pana: " + pAddCounter.getDato() + " ha sido cambiado a la cola de prioridad 2");
+                    queue2.enconlarDesdeOtraCola(pAddCounter);
+                    queue3.desencolar();
+                } else {
+                    Pana pReQueue = queue3.desencolar();
+                    queue3.enconlarDesdeOtraCola(pReQueue);
+                }
             }
+        } else {
+            System.out.println("Nada en esta cola (3)");
         }
+
     }
 
     public void showData(Queue1 queue1, Queue2 queue2, Queue3 queue3, ReparationQueue repQueue) {
